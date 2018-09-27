@@ -10,11 +10,20 @@ addons:
       - gcc-7
       - g++-7
 
+install:
+  - sudo apt-get install libgtest-dev
+  - cd /usr/src/gtest
+  - sudo env "PATH=$PATH" cmake .
+  - sudo make
+  - sudo cp *.a /usr/lib
+  - cd "${TRAVIS_BUILD_DIR}"
+
 script:
   - export CC=gcc-7
   - export CXX=g++-7
   - cmake .
   - cmake --build .
+  - cmake --build . --target test
   - cmake --build . --target package
   
 deploy:
