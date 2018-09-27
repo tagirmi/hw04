@@ -57,7 +57,6 @@ void container_print_helper(std::ostream& stream, const T& container)
       stream << ".";
     stream << *i;
   }
-  stream << std::endl;
 }
 
 template<typename T>
@@ -104,7 +103,7 @@ template<typename T>
 std::enable_if_t<details::is_same_v<T, std::string>, void>
 print_ip(std::ostream& stream, const T& string)
 {
-  stream << string << std::endl;
+  stream << string;
 }
 
 /**
