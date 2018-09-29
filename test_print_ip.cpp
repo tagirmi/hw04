@@ -65,3 +65,12 @@ TEST(TestPrintIp, PrintList)
 
   EXPECT_EQ(ss.str(), "1.2.3.4");
 }
+
+TEST(TestPrintIp, PrintTuple)
+{
+  std::stringstream ss;
+
+  hw04::print_ip(ss, std::make_tuple(1, 2, 3, 4));
+
+  EXPECT_EQ(ss.str(), "1.2.3.4");
+}

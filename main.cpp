@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <tuple>
 
 #include "print_ip.h"
 
@@ -28,6 +29,10 @@ int main(int argc, char const *argv[])
 
     hw04::print_ip(std::cout, std::list<int>{5, 6, 7, 8});
     std::cout << std::endl;
+
+    hw04::print_ip(std::cout, std::make_tuple(9, 10, 11, 12));
+    std::cout << std::endl;
+
   }
   catch(const std::exception& ex)
   {
